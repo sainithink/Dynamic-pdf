@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <title>Pdf </title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="invoice-box">
+
+    <form action="/api/pdf/create" method="post">
+      <table cellpadding="0" cellspacing="0">
+          <tr class="top">
+              <td colspan="2">
+                  <table>
+                      <tr>
+                          <td class="title"> <img src="#" alt="LOGO"></td>
+                          <td>
+                            Invoice #:<b style="color:red"> <input type="text" name="invoice" value="" required> </b>  <br> Date: <input type="date" name="date" required> </td>
+                      </tr>
+                  </table>
+              </td>
+          </tr>
+          <tr class="information">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td> <center> <h1 style="color:red">Payment Invoice</h1> </center> </td>
+                    </tr>
+                </table>
+            </td>
+          </tr>
+          <tr class="information">
+
+              <td colspan="2">
+                  <table>
+                      <tr>
+                          <td> Recieved from :<b> <input type="text" name="firstName" placeholder="firstName" required> </b> &nbsp; to be credit of this amounts detailed below in respect of the Account.</td>
+                      </tr>
+                  </table>
+              </td>
+          </tr>
+          <tr class="total">
+            <td></td>
+              <td> Total Amount Paid: <br> <b> <input type="text" name="amount" placeholder="Amount" required> </b> </td>
+
+          </tr>
+      </table>
+      <center><b>Note: This receipt is electronically generated</b> </h3> </center>
+      <center><h5> K. Sai Nithin </h5> </center>
+      <button type="submit" >Create Pdf</button>
+      </form>
+      <br><br>
+      <h1>Pdf</h1>
+      <p>Author: <a href="mailto:sainithin.karra@gmail.com">@Sainithin</a></p>
+  </div>
+
+
+
+
+</body>
+
+</html>

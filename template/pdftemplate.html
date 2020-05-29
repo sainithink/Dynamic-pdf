@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Online Recipet</title>
+    <style>
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+            border: 4px solid #0f2ab3;
+            font-size: 16px;
+            line-height: 24px;
+            font-family: "Times New Roman", Times, serif;
+            color: #000;
+            background-image: url('#');
+
+background-size: 8.9in;
+background-height:10.55in;
+
+background-repeat: no-repeat, repeat;
+        }
+        b {
+
+    color: #a01418;
+    font-weight: bold;
+
+}
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right
+        }
+
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center
+            }
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center
+            }
+        }
+
+        .rtl {
+            direction: rtl;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .rtl table {
+            text-align: right
+        }
+
+        .rtl table tr td:nth-child(2) {
+            text-align: left
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+          {{#each users}}
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title"> <img src="#" alt="LOGO"></td>
+                            <td>
+                              Invoice #:<b style="color:red">  {{this.invoice}}</b>  <br> Date: {{this.date}}  </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="information">
+              <td colspan="2">
+                  <table>
+                      <tr>
+                          <td> <center> <h1 style="color:red">Payment Invoice</h1> </center> </td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+            <tr class="information">
+
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td> Recieved from :<b>{{this.firstName}}</b> &nbsp; to be credit of this amounts detailed below in respect of the Account.</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="total">
+              <td></td>
+                <td> Total Amount Paid: <br> <b>{{this.amount}} </b> </td>
+
+            </tr>
+            {{/each}}
+        </table>
+        <center><b>Note: This receipt is electronically generated</b> </h3> </center>
+        <center><h5> K. Sai Nithin/ {{this.date}}  </h5> </center
+    </div>
+
+</body>
+
+</html>
